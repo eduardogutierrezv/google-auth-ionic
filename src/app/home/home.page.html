@@ -1,24 +1,15 @@
 
 <app-heaeder-menu [TitleHeader]= "titleHeader" ></app-heaeder-menu>
-<ion-content class="ion-padding login-page">
-  <div class="login-container">
-     Botón de Google 
-    <div *ngIf="!user">
-      <ion-button expand="block" fill="outline" class="google-btn" (click)="signInWithGoogle()">
-        Iniciar con Google
-        <img class="social-logo" src="https://auth.openai.com/assets/google-logo-NePEveMl.svg" alt="Logo de Google">
-      </ion-button>
-    </div>
-
-   
-    <div *ngIf="user" class="user-info">
+<!--
+<ion-content class="ion-padding login-page">   
+    <div>
       <h2 class="ion-text-center">Bienvenido, {{ user.displayName }}</h2>
       <p class="ion-text-center">Email: {{ user.email }}</p>
       <img [src]="user.imageUrl" alt="Foto de perfil">
-      <ion-button color="danger" expand="block" (click)="signOut()">Cerrar Sesión</ion-button>
     </div>
   </div>
 </ion-content>
+-->
 
 <!--<ion-header>
   <ion-toolbar>

@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { GoogleAuth, User } from '@codetrix-studio/capacitor-google-auth';
+import { Router } from '@angular/router';
+
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +10,7 @@ export class GoogleAuthServiceService {
 
   user:any;
 
-  constructor() { 
+  constructor(private _router:Router) { 
     GoogleAuth.initialize();
   }
 
@@ -20,6 +22,7 @@ export class GoogleAuthServiceService {
       
      // console.log('Usuario:', user);
       this.saveSignIn(user);
+      this._router.navigate(['/home']);
       return this.user;
 
     } catch (error) {
@@ -32,6 +35,7 @@ export class GoogleAuthServiceService {
     await GoogleAuth.signOut();
     this.user = null;
     this.deleteSignOut();
+    this._router.navigate(['/login']);
     return this.user;
   }
 

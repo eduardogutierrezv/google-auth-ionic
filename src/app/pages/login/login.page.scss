@@ -1,0 +1,27 @@
+.login-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  
+    .logo-container {
+      margin-bottom: 20px;
+      text-align: center;
+  
+      .logo {
+        width: 150px;
+        height: auto;
+      }
+    }
+  
+    ion-card {
+      width: 90%;
+      max-width: 400px;
+    }
+  
+    .button-container {
+      margin-top: 20px;
+    }
+  }
+  
