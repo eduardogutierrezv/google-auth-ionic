@@ -20,7 +20,7 @@ export class GoogleAuthServiceService {
       
      // console.log('Usuario:', user);
       this.saveSignIn(user);
-      //return this.user;
+      return this.user;
 
     } catch (error) {
       console.error('Error al iniciar sesión:', error);
@@ -32,7 +32,7 @@ export class GoogleAuthServiceService {
     await GoogleAuth.signOut();
     this.user = null;
     this.deleteSignOut();
-    //return this.user;
+    return this.user;
   }
 
   private saveSignIn(user:User){

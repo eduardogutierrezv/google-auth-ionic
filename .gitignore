@@ -75,6 +75,7 @@ web_modules/
 # pensar en variables de entornos y ios .angular y android
 ios
 .angular
+www
 
 
 # parcel-bundler cache (https://parceljs.org/)
