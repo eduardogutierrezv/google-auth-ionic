@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { MenuController } from '@ionic/angular';
+import { GoogleAuthServiceService } from './common/service/google-auth.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,18 @@ import { Component } from '@angular/core';
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
-  constructor() {}
+  constructor(private _googleService:GoogleAuthServiceService,
+              private _menuController: MenuController
+  ) {}
+
+
+  async closeMenu() {
+    await this._menuController.close();
+  }
+
+  async signOut(){
+    this.closeMenu();
+    await this._googleService.signOut();
+    
+  }
 }

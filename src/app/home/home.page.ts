@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { GoogleAuthServiceService } from '../common/service/google-auth.service';
 
 @Component({
   selector: 'app-home',
@@ -11,18 +10,12 @@ export class HomePage {
   user:any;
   titleHeader:string = 'inicio';
   
-  constructor(private readonly _gooleAuthService:GoogleAuthServiceService) {
+  constructor() {
     
   }
 
-
-  async signInWithGoogle(){
-    this.user = await this._gooleAuthService.signInWithGoogle();
+  ngOnInit() {
+    this.user = localStorage.getItem('user');
   }
-
-  async signOut(){
-    this.user = await this._gooleAuthService.signOut();
-  }
-
  
 }
