@@ -1,1 +1,1 @@
-# google-auth-ionic
+# base-ionic-google
